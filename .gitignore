@@ -12,8 +12,8 @@ lerna-debug.log*
 .env.*
 *.env
 !.env.example
+!frontend/.env
 Backend/.env
-frontend/.env
 *.local
 
 # Production build outputs
