@@ -8,7 +8,7 @@ export default function AdminUsers() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8080/api/auth/admin/users", {
+      .get(`${import.meta.env.VITE_API_URL || "https://battlebyte.130-210-12-68.sslip.io"}/api/auth/admin/users`, {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((res) => setUsers(res.data))

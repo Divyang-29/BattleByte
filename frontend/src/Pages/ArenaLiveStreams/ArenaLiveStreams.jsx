@@ -5,7 +5,7 @@ export default function ArenaLiveStreams() {
   const [streams, setStreams] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:8080/api/live-streams")
+    fetch(`${import.meta.env.VITE_API_URL || "https://battlebyte.130-210-12-68.sslip.io"}/api/live-streams`)
       .then((res) => res.json())
       .then((data) => {
         setStreams(data.data || []); // ✅ FIXED
@@ -26,7 +26,7 @@ export default function ArenaLiveStreams() {
 
                 <div className="arena-live-banner">
                   <img
-                    src={`http://localhost:8080/uploads/${stream.banner_image}`}
+                    src={`${import.meta.env.VITE_API_URL || "https://battlebyte.130-210-12-68.sslip.io"}/uploads/${stream.banner_image}`}
                     alt="Banner"
                   />
 
@@ -49,7 +49,7 @@ export default function ArenaLiveStreams() {
 
                   <div className="arena-streamer-info">
                     <img
-                      src={`http://localhost:8080/uploads/${stream.streamer_image}`}
+                      src={`${import.meta.env.VITE_API_URL || "https://battlebyte.130-210-12-68.sslip.io"}/uploads/${stream.streamer_image}`}
                       alt="Streamer"
                     />
                     <div>

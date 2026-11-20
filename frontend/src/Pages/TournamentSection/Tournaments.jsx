@@ -5,7 +5,7 @@ export default function Tournaments() {
   const [tournaments, setTournaments] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:8080/api/tournaments")
+    fetch(`${import.meta.env.VITE_API_URL || "https://battlebyte.130-210-12-68.sslip.io"}/api/tournaments`)
       .then(res => res.json())
       .then(data => setTournaments(data))
       .catch(err => console.error("Tournament error:", err));
@@ -45,12 +45,12 @@ export default function Tournaments() {
               {/* TEAM */}
               <div className="team-cell">
                 <img
-                  src={`http://localhost:8080/uploads/${tour.team1_image}`}
+                  src={`${import.meta.env.VITE_API_URL || "https://battlebyte.130-210-12-68.sslip.io"}/uploads/${tour.team1_image}`}
                   alt=""
                 />
                 <span className="vs">VS</span>
                 <img
-                  src={`http://localhost:8080/uploads/${tour.team2_image}`}
+                  src={`${import.meta.env.VITE_API_URL || "https://battlebyte.130-210-12-68.sslip.io"}/uploads/${tour.team2_image}`}
                   alt=""
                 />
               </div>

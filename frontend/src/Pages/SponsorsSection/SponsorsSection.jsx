@@ -5,7 +5,7 @@ export default function SponsorsSection() {
   const [sponsors, setSponsors] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:8080/api/sponsors")
+    fetch(`${import.meta.env.VITE_API_URL || "https://battlebyte.130-210-12-68.sslip.io"}/api/sponsors`)
       .then((res) => res.json())
       .then((data) => {
         setSponsors(data.data || []);
@@ -24,7 +24,7 @@ export default function SponsorsSection() {
           {sponsors.map((sponsor) => (
             <div className="es-sponsor-card" key={sponsor.id}>
               <img
-                src={`http://localhost:8080/uploads/${sponsor.image}`}
+                src={`${import.meta.env.VITE_API_URL || "https://battlebyte.130-210-12-68.sslip.io"}/uploads/${sponsor.image}`}
                 alt="Sponsor"
               />
             </div>

@@ -15,7 +15,7 @@ export default function Dashboard() {
   useEffect(() => {
     const fetchStats = async () => {
       try {
-        const res = await axios.get("http://localhost:8080/admin/stats");
+        const res = await axios.get(`${import.meta.env.VITE_API_URL || "https://battlebyte.130-210-12-68.sslip.io"}/admin/stats`);
 
         // Safe mapping
         setStats({

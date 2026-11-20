@@ -50,7 +50,7 @@ export default function AdminCreateBlog() {
 
     try {
       await axios.post(
-        "http://localhost:8080/api/blogs",
+        `${import.meta.env.VITE_API_URL || "https://battlebyte.130-210-12-68.sslip.io"}/api/blogs`,
         formData,
         {
           headers: {

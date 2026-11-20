@@ -10,7 +10,7 @@ export default function CartPage() {
 
   const fetchCart = async () => {
     try {
-      const res = await axios.get("http://localhost:8080/cart", {
+      const res = await axios.get(`${import.meta.env.VITE_API_URL || "https://battlebyte.130-210-12-68.sslip.io"}/cart`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setCart(res.data);
@@ -27,7 +27,7 @@ export default function CartPage() {
     if (qty < 1) return;
 
     await axios.put(
-      `http://localhost:8080/cart/${id}`,
+      `${import.meta.env.VITE_API_URL || "https://battlebyte.130-210-12-68.sslip.io"}/cart/${id}`,
       { quantity: qty },
       { headers: { Authorization: `Bearer ${token}` } },
     );
@@ -36,7 +36,7 @@ export default function CartPage() {
   };
 
   const removeItem = async (id) => {
-    await axios.delete(`http://localhost:8080/cart/${id}`, {
+    await axios.delete(`${import.meta.env.VITE_API_URL || "https://battlebyte.130-210-12-68.sslip.io"}/cart/${id}`, {
       headers: { Authorization: `Bearer ${token}` },
     });
 
@@ -61,7 +61,7 @@ export default function CartPage() {
                 <div className="cart-row" key={item.id}>
                   <div className="cart-product">
                     <img
-                      src={`http://localhost:8080/uploads/${item.primary_image}`}
+                      src={`${import.meta.env.VITE_API_URL || "https://battlebyte.130-210-12-68.sslip.io"}/uploads/${item.primary_image}`}
                       alt=""
                     />
                     <div>

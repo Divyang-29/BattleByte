@@ -23,7 +23,7 @@ export default function ContactSection() {
     e.preventDefault();
 
     try {
-      const res = await fetch("http://localhost:8080/api/contact", {
+      const res = await fetch(`${import.meta.env.VITE_API_URL || "https://battlebyte.130-210-12-68.sslip.io"}/api/contact`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

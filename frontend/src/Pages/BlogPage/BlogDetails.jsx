@@ -8,14 +8,14 @@ export default function BlogDetails() {
   const [sidebar, setSidebar] = useState(null);
 
   useEffect(() => {
-    fetch(`http://localhost:8080/api/blogs/${id}`)
+    fetch(`${import.meta.env.VITE_API_URL || "https://battlebyte.130-210-12-68.sslip.io"}/api/blogs/${id}`)
       .then((res) => res.json())
       .then((data) => setBlog(data))
       .catch((err) => console.error("Blog detail error:", err));
   }, [id]);
 
   useEffect(() => {
-    fetch("http://localhost:8080/api/blogs/sidebar")
+    fetch(`${import.meta.env.VITE_API_URL || "https://battlebyte.130-210-12-68.sslip.io"}/api/blogs/sidebar`)
       .then((res) => res.json())
       .then((data) => setSidebar(data))
       .catch((err) => console.error("Sidebar error:", err));
@@ -40,7 +40,7 @@ export default function BlogDetails() {
         <div className="blog-main">
           <img
             className="blog-hero"
-            src={`http://localhost:8080/uploads/${section?.image1}`}
+            src={`${import.meta.env.VITE_API_URL || "https://battlebyte.130-210-12-68.sslip.io"}/uploads/${section?.image1}`}
             alt="hero"
           />
 
@@ -59,7 +59,7 @@ export default function BlogDetails() {
 
           <img
             className="blog-image2"
-            src={`http://localhost:8080/uploads/${section?.image2}`}
+            src={`${import.meta.env.VITE_API_URL || "https://battlebyte.130-210-12-68.sslip.io"}/uploads/${section?.image2}`}
             alt="blog"
           />
 
@@ -123,7 +123,7 @@ export default function BlogDetails() {
             {sidebar?.popularBlogs.map((blog) => (
               <div key={blog.id} className="popular-post">
                 <img
-                  src={`http://localhost:8080/uploads/${blog.primary_image}`}
+                  src={`${import.meta.env.VITE_API_URL || "https://battlebyte.130-210-12-68.sslip.io"}/uploads/${blog.primary_image}`}
                   alt=""
                 />
                 <div>
@@ -161,12 +161,12 @@ export default function BlogDetails() {
               {sidebar.matches.map((match) => (
                 <div key={match.id} className="match-row">
                   <img
-                    src={`http://localhost:8080/uploads/${match.image1}`}
+                    src={`${import.meta.env.VITE_API_URL || "https://battlebyte.130-210-12-68.sslip.io"}/uploads/${match.image1}`}
                     alt=""
                   />
                   <span className="vs-text">VS</span>
                   <img
-                    src={`http://localhost:8080/uploads/${match.image2}`}
+                    src={`${import.meta.env.VITE_API_URL || "https://battlebyte.130-210-12-68.sslip.io"}/uploads/${match.image2}`}
                     alt=""
                   />
                   <div className="match-date">
@@ -182,7 +182,7 @@ export default function BlogDetails() {
             <div className="sidebar-block">
               <img
                 className="sidebar-ad"
-                src={`http://localhost:8080/uploads/${sidebar.advertisement.image}`}
+                src={`${import.meta.env.VITE_API_URL || "https://battlebyte.130-210-12-68.sslip.io"}/uploads/${sidebar.advertisement.image}`}
                 alt="Advertisement"
               />
             </div>

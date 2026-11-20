@@ -7,7 +7,7 @@ export default function BlogPage() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch("http://localhost:8080/api/blogs")
+    fetch(`${import.meta.env.VITE_API_URL || "https://battlebyte.130-210-12-68.sslip.io"}/api/blogs`)
       .then((res) => res.json())
       .then((data) => setBlogs(data))
       .catch((err) => console.error("Blog fetch error:", err));
@@ -33,7 +33,7 @@ export default function BlogPage() {
             >
               <div className="blog-image">
                 <img
-                  src={`http://localhost:8080/uploads/${blog.primary_image}`}
+                  src={`${import.meta.env.VITE_API_URL || "https://battlebyte.130-210-12-68.sslip.io"}/uploads/${blog.primary_image}`}
                   alt="blog"
                 />
               </div>

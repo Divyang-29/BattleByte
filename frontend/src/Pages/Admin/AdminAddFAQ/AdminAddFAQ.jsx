@@ -22,7 +22,7 @@ export default function AdminAddFAQ() {
 
     try {
       await axios.post(
-        "http://localhost:8080/api/faq",
+        `${import.meta.env.VITE_API_URL || "https://battlebyte.130-210-12-68.sslip.io"}/api/faq`,
         form,
         {
           headers: {

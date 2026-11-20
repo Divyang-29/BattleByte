@@ -10,7 +10,7 @@ export default function ProductDetails() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch(`http://localhost:8080/api/products/${id}`)
+    fetch(`${import.meta.env.VITE_API_URL || "https://battlebyte.130-210-12-68.sslip.io"}/api/products/${id}`)
       .then((res) => res.json())
       .then((data) => setProduct(data))
       .catch((err) => console.error("Single product error:", err));
@@ -19,7 +19,7 @@ export default function ProductDetails() {
   const handleAddToCart = async () => {
     const token = localStorage.getItem("token");
 
-    await fetch("http://localhost:8080/cart", {
+    await fetch(`${import.meta.env.VITE_API_URL || "https://battlebyte.130-210-12-68.sslip.io"}/cart`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -43,7 +43,7 @@ export default function ProductDetails() {
           {/* LEFT IMAGE */}
           <div className="product-image">
             <img
-              src={`http://localhost:8080/uploads/${product.primary_image}`}
+              src={`${import.meta.env.VITE_API_URL || "https://battlebyte.130-210-12-68.sslip.io"}/uploads/${product.primary_image}`}
               alt={product.title}
             />
           </div>

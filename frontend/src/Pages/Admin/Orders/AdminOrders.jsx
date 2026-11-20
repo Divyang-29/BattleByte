@@ -8,7 +8,7 @@ export default function AdminOrders() {
 
   const fetchOrders = async () => {
     const res = await axios.get(
-      "http://localhost:8080/orders/admin",
+      `${import.meta.env.VITE_API_URL || "https://battlebyte.130-210-12-68.sslip.io"}/orders/admin`,
       {
         headers: { Authorization: `Bearer ${token}` },
       }
@@ -22,7 +22,7 @@ export default function AdminOrders() {
 
   const changeStatus = async (id, status) => {
     await axios.put(
-      `http://localhost:8080/orders/admin/${id}/status`,
+      `${import.meta.env.VITE_API_URL || "https://battlebyte.130-210-12-68.sslip.io"}/orders/admin/${id}/status`,
       { status },
       { headers: { Authorization: `Bearer ${token}` } }
     );

@@ -3,7 +3,7 @@ import axios from "axios";
 import "./AdminTeam.css";
 
 function AdminTeam() {
-  const API = "http://localhost:8080";
+  const API = import.meta.env.VITE_API_URL || "https://battlebyte.130-210-12-68.sslip.io";
 
   const [name, setName] = useState("");
   const [image, setImage] = useState(null);

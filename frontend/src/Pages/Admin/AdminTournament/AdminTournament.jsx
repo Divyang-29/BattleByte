@@ -3,7 +3,7 @@ import axios from "axios";
 import "./AdminTournament.css";
 
 function AdminTournament() {
-  const API = "http://localhost:8080";
+  const API = import.meta.env.VITE_API_URL || "https://battlebyte.130-210-12-68.sslip.io";
 
   const [formData, setFormData] = useState({
     title: "",

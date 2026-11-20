@@ -6,7 +6,7 @@ export default function FAQSection() {
   const [activeIndex, setActiveIndex] = useState(null);
 
   useEffect(() => {
-    fetch("http://localhost:8080/api/faq")
+    fetch(`${import.meta.env.VITE_API_URL || "https://battlebyte.130-210-12-68.sslip.io"}/api/faq`)
       .then((res) => res.json())
       .then((data) => {
         setFaqs(data.data || []);

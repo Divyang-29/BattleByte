@@ -8,7 +8,7 @@ export default function AdminContactMessages() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8080/api/contact", {
+      .get(`${import.meta.env.VITE_API_URL || "https://battlebyte.130-210-12-68.sslip.io"}/api/contact`, {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((res) => setMessages(res.data.data))

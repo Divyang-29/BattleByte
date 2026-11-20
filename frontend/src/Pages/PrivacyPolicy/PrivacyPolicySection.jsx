@@ -5,7 +5,7 @@ export default function PrivacyPolicySection() {
   const [privacy, setPrivacy] = useState(null);
 
   useEffect(() => {
-    fetch("http://localhost:8080/api/privacy")
+    fetch(`${import.meta.env.VITE_API_URL || "https://battlebyte.130-210-12-68.sslip.io"}/api/privacy`)
       .then((res) => res.json())
       .then((data) => {
         if (data.data && data.data.length > 0) {

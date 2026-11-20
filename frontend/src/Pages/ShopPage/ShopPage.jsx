@@ -7,7 +7,7 @@ export default function ShopPage() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch("http://localhost:8080/api/products")
+    fetch(`${import.meta.env.VITE_API_URL || "https://battlebyte.130-210-12-68.sslip.io"}/api/products`)
       .then((res) => res.json())
       .then((data) => setProducts(data))
       .catch((err) => console.error("Product fetch error:", err));
@@ -25,7 +25,7 @@ export default function ShopPage() {
                 onClick={() => navigate(`/product/${product.id}`)}
               >
                 <img
-                  src={`http://localhost:8080/uploads/${product.primary_image}`}
+                  src={`${import.meta.env.VITE_API_URL || "https://battlebyte.130-210-12-68.sslip.io"}/uploads/${product.primary_image}`}
                   alt={product.title}
                 />
               </div>

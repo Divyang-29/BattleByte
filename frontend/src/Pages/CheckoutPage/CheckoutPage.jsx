@@ -26,7 +26,7 @@ export default function CheckoutPage() {
   // Fetch cart
   useEffect(() => {
     axios
-      .get("http://localhost:8080/cart", {
+      .get(`${import.meta.env.VITE_API_URL || "https://battlebyte.130-210-12-68.sslip.io"}/cart`, {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((res) => setCart(res.data))
@@ -43,7 +43,7 @@ export default function CheckoutPage() {
   const handlePlaceOrder = async () => {
     try {
       const res = await axios.post(
-        "http://localhost:8080/orders",
+        `${import.meta.env.VITE_API_URL || "https://battlebyte.130-210-12-68.sslip.io"}/orders`,
         {
           billingData,
           payment_method: paymentMethod,

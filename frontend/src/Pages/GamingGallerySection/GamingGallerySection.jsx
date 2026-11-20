@@ -6,7 +6,7 @@ export default function GamingGallerySection() {
   const [visibleCount, setVisibleCount] = useState(6);
 
   useEffect(() => {
-    fetch("http://localhost:8080/api/gallery")
+    fetch(`${import.meta.env.VITE_API_URL || "https://battlebyte.130-210-12-68.sslip.io"}/api/gallery`)
       .then((res) => res.json())
       .then((data) => {
         setImages(data?.data || []);
@@ -29,7 +29,7 @@ export default function GamingGallerySection() {
             <div className="col-lg-4 col-md-6 mb-4" key={item.id}>
               <div className="gallery-card">
                 <img
-                  src={`http://localhost:8080/uploads/${item.image}`}
+                  src={`${import.meta.env.VITE_API_URL || "https://battlebyte.130-210-12-68.sslip.io"}/uploads/${item.image}`}
                   alt="Gaming"
                   className="img-fluid"
                 />

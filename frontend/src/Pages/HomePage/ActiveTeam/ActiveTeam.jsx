@@ -5,7 +5,7 @@ export default function ActiveTeam() {
   const [team, setTeam] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:8080/api/team")
+    fetch(`${import.meta.env.VITE_API_URL || "https://battlebyte.130-210-12-68.sslip.io"}/api/team`)
       .then((res) => res.json())
       .then((data) => setTeam(data.data))
       .catch((err) => console.error(err));
@@ -28,7 +28,7 @@ export default function ActiveTeam() {
               
               <div className="active-team-image">
                 <img
-                  src={`http://localhost:8080/uploads/${member.image}`}
+                  src={`${import.meta.env.VITE_API_URL || "https://battlebyte.130-210-12-68.sslip.io"}/uploads/${member.image}`}
                   alt={member.name}
                 />
               </div>

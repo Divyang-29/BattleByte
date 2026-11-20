@@ -8,7 +8,7 @@ function AdminGallery() {
   const [gallery, setGallery] = useState([]);
   const [loading, setLoading] = useState(false);
 
-  const API = "http://localhost:8080";
+  const API = import.meta.env.VITE_API_URL || "https://battlebyte.130-210-12-68.sslip.io";
 
   const fetchImages = async () => {
     const res = await axios.get(`${API}/gallery`);

@@ -33,7 +33,7 @@ export default function RegisterPage() {
     setStatus("");
 
     try {
-      const res = await fetch("http://localhost:8080/api/auth/register", {
+      const res = await fetch(`${import.meta.env.VITE_API_URL || "https://battlebyte.130-210-12-68.sslip.io"}/api/auth/register`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

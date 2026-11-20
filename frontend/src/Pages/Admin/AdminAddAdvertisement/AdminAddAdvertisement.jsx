@@ -19,7 +19,7 @@ export default function AdminAddAdvertisement() {
 
     try {
       await axios.post(
-        "http://localhost:8080/api/advertisements",
+        `${import.meta.env.VITE_API_URL || "https://battlebyte.130-210-12-68.sslip.io"}/api/advertisements`,
         formData,
         {
           headers: {

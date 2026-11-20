@@ -26,7 +26,7 @@ export default function LoginPage() {
     setStatus("");
 
     try {
-      const res = await fetch("http://localhost:8080/api/auth/login", {
+      const res = await fetch(`${import.meta.env.VITE_API_URL || "https://battlebyte.130-210-12-68.sslip.io"}/api/auth/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
