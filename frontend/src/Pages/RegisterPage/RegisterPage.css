@@ -1,0 +1,62 @@
+.register-wrapper {
+  padding: 100px 0;
+  background: linear-gradient(to right, #2a0000, #050008);
+  color: #fff;
+  min-height: 100vh;
+}
+
+.register-heading {
+  font-size: 40px;
+  font-weight: 800;
+}
+
+.register-form {
+  max-width: 600px;
+}
+
+.register-form label {
+  margin-top: 20px;
+  display: block;
+}
+
+.register-form input {
+  width: 100%;
+  padding: 14px;
+  background: #000;
+  border: 1px solid #ff2e2e;
+  color: #fff;
+  outline: none;
+  margin-top: 8px;
+  transition: 0.3s;
+}
+
+.register-form input:focus {
+  border-color: #ff0000;
+  box-shadow: 0 0 8px rgba(255, 0, 0, 0.4);
+}
+
+.password-note {
+  margin-top: 15px;
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+.register-btn {
+  margin-top: 25px;
+  padding: 12px 35px;
+  background: #000;
+  border: 2px solid #ff2e2e;
+  color: #fff;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.register-btn:hover {
+  background: #ff2e2e;
+  color: #000;
+}
+
+.register-status {
+  margin-top: 15px;
+  font-weight: 600;
+}

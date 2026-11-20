@@ -1,0 +1,77 @@
+/* SECTION BACKGROUND */
+.who-wrapper {
+  padding: 100px 0;
+  background: linear-gradient(to right, #1b0000, #000000);
+  color: #ffffff;
+}
+
+/* IMAGE STYLING */
+.who-image-box {
+  position: relative;
+}
+
+.who-image {
+  width: 100%;
+  border-radius: 8px;
+  filter: brightness(0.85) contrast(1.1);
+}
+
+/* CONTENT AREA */
+.who-content-area {
+  padding-left: 10px;
+}
+
+.who-tagline {
+  color: #ff2e2e;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.who-heading {
+  font-size: 42px;
+  font-weight: 800;
+  margin: 20px 0;
+  line-height: 1.3;
+}
+
+.who-description {
+  color: #cccccc;
+  font-size: 16px;
+  margin-bottom: 30px;
+}
+
+/* MISSION BOX */
+.who-highlight-box {
+  background-color: #1f1a26;
+  padding: 30px;
+  border-radius: 8px;
+}
+
+.who-highlight-title {
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.who-star {
+  color: #ff2e2e;
+  margin-right: 8px;
+}
+
+.who-highlight-text {
+  color: #bbbbbb;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+/* RESPONSIVE */
+@media (max-width: 992px) {
+  .who-wrapper {
+    padding: 60px 0;
+  }
+
+  .who-heading {
+    font-size: 30px;
+  }
+}

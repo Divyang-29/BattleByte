@@ -1,0 +1,48 @@
+.page-banner {
+  height: 350px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  color: #ffffff;
+}
+
+/* Dark Overlay */
+.page-banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+}
+
+.banner-content {
+  position: relative;
+  z-index: 2;
+}
+
+.banner-title {
+  font-size: 64px;
+  font-weight: 800;
+  margin-bottom: 15px;
+}
+
+.banner-breadcrumb {
+  font-size: 16px;
+  letter-spacing: 2px;
+  font-weight: 500;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .page-banner {
+    height: 250px;
+  }
+
+  .banner-title {
+    font-size: 36px;
+  }
+
+  .banner-breadcrumb {
+    font-size: 14px;
+  }
+}

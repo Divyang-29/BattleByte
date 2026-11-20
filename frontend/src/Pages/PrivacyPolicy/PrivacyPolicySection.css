@@ -1,0 +1,25 @@
+.privacy-wrapper {
+  padding: 100px 0;
+  background: linear-gradient(to right, #1c0000, #050008);
+  color: #ffffff;
+}
+
+.privacy-updated {
+  font-style: italic;
+  opacity: 0.8;
+  margin-bottom: 40px;
+}
+
+.privacy-title {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+.privacy-content-box {
+  background: #1b0f18;
+  padding: 30px;
+  border-radius: 12px;
+  line-height: 1.8;
+  border: 1px solid rgba(255, 0, 0, 0.2);
+}

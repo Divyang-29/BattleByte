@@ -1,0 +1,127 @@
+/* Page Background */
+
+.create-product {
+  max-width: 900px;
+  margin: 50px auto;
+  padding: 40px;
+  background: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.06);
+}
+
+/* Title */
+
+.create-product h2 {
+  font-size: 26px;
+  font-weight: 600;
+  margin-bottom: 30px;
+  color: #1f2937;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+}
+
+/* Form Layout */
+
+.create-product form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+/* Full width fields */
+
+.create-product textarea,
+.create-product input[type="file"],
+.create-product button {
+  grid-column: span 2;
+}
+
+/* Inputs */
+
+.create-product input,
+.create-product textarea,
+.create-product select {
+  padding: 13px 14px;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  font-size: 14px;
+  background: #fafafa;
+  transition: all 0.2s ease;
+}
+
+/* Focus effect */
+
+.create-product input:focus,
+.create-product textarea:focus,
+.create-product select:focus {
+  outline: none;
+  border-color: #6366f1;
+  background: white;
+  box-shadow: 0 0 0 3px rgba(99,102,241,0.15);
+}
+
+/* Textarea */
+
+.create-product textarea {
+  min-height: 110px;
+  resize: vertical;
+}
+
+/* File Input */
+
+.create-product input[type="file"] {
+  background: #f4f6f9;
+  border: 1px dashed #d1d5db;
+  padding: 14px;
+  cursor: pointer;
+}
+
+/* Button */
+
+.create-product button {
+  margin-top: 10px;
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(135deg,#6366f1,#4f46e5);
+  color: white;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+/* Button Hover */
+
+.create-product button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 20px rgba(99,102,241,0.2);
+}
+
+/* Image preview */
+
+.create-product img {
+  width: 120px;
+  border-radius: 10px;
+  border: 1px solid #eee;
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+
+  .create-product {
+    padding: 25px;
+  }
+
+  .create-product form {
+    grid-template-columns: 1fr;
+  }
+
+  .create-product textarea,
+  .create-product input[type="file"],
+  .create-product button {
+    grid-column: span 1;
+  }
+
+}

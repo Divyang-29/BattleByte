@@ -1,0 +1,71 @@
+.admin-terms-container {
+  padding: 40px;
+  background: #f4f6f9;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+.admin-terms-container h1 {
+  margin-bottom: 30px;
+}
+
+/* FORM */
+.terms-form {
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  max-width: 700px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  margin-bottom: 40px;
+}
+
+.terms-form input,
+.terms-form textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+}
+
+.terms-form textarea {
+  resize: vertical;
+}
+
+.terms-form button {
+  width: 100%;
+  padding: 12px;
+  background: #111;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.terms-form button:hover {
+  background: #333;
+}
+
+/* LIST */
+.terms-list {
+  display: grid;
+  gap: 20px;
+}
+
+.term-card {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.05);
+}
+
+.term-card h3 {
+  margin-bottom: 10px;
+}
+
+.term-card p {
+  color: #555;
+  line-height: 1.6;
+}

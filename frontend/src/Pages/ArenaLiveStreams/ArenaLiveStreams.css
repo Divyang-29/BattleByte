@@ -1,0 +1,45 @@
+.arena-live-wrapper {
+  padding: 100px 0;
+  background: linear-gradient(to right, #2a0000, #050008);
+  color: #ffffff;
+}
+
+.arena-live-banner {
+  position: relative;
+  overflow: hidden;
+}
+
+.arena-live-banner img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+}
+
+.arena-live-badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: #ff2e2e;
+  padding: 5px 12px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.arena-play-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.arena-play-btn a {
+  background: white;
+  color: #ff2e2e;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+}

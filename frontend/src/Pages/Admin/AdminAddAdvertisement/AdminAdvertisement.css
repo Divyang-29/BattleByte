@@ -1,0 +1,83 @@
+/* Page Layout */
+
+.admin-ad-page {
+  padding: 60px 20px;
+  background: #f4f6f9;
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Heading */
+
+.admin-ad-page h2 {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 30px;
+  color: #1f2937;
+  text-align: center;
+}
+
+/* Upload Card */
+
+.ad-form {
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 14px;
+  width: 100%;
+  max-width: 520px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.06);
+  text-align: center;
+}
+
+/* File Upload */
+
+.ad-form input[type="file"] {
+  width: 100%;
+  padding: 25px;
+  border: 2px dashed #d1d5db;
+  border-radius: 10px;
+  background: #fafafa;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.ad-form input[type="file"]:hover {
+  border-color: #6366f1;
+  background: #f8f9ff;
+}
+
+/* Image Preview */
+
+.ad-preview {
+  margin-top: 20px;
+}
+
+.ad-preview img {
+  max-width: 100%;
+  border-radius: 10px;
+  border: 1px solid #eee;
+}
+
+/* Button */
+
+.ad-form button {
+  width: 100%;
+  margin-top: 20px;
+  padding: 14px;
+  border-radius: 8px;
+  border: none;
+  background: linear-gradient(135deg,#6366f1,#4f46e5);
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.ad-form button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 25px rgba(99,102,241,0.25);
+}

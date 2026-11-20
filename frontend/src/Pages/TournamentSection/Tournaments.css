@@ -1,0 +1,72 @@
+.tournament-section {
+  padding: 100px 0;
+  background: linear-gradient(to right, #6e0f0f, #0b0000);
+  color: #fff;
+}
+
+.tournament-title {
+  text-align: center;
+  font-size: 42px;
+  font-weight: 800;
+  margin-bottom: 60px;
+}
+
+/* TABLE */
+.tournament-table {
+  width: 100%;
+}
+
+.tournament-header {
+  display: grid;
+  grid-template-columns: 2fr 2fr 2fr 1fr 1fr 1fr;
+  padding: 15px 0;
+  font-weight: 700;
+  border-bottom: 1px solid #ff2e2e;
+}
+
+.tournament-row {
+  display: grid;
+  grid-template-columns: 2fr 2fr 2fr 1fr 1fr 1fr;
+  align-items: center;
+  padding: 30px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  transition: 0.3s;
+}
+
+.tournament-row:hover {
+  background: rgba(255, 0, 0, 0.05);
+}
+
+/* TEAM CELL */
+.team-cell {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.team-cell img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+}
+
+.vs {
+  font-weight: 700;
+  color: #ff2e2e;
+}
+
+/* WATCH ICONS */
+.watch-icons {
+  display: flex;
+  gap: 15px;
+  font-size: 18px;
+}
+
+.watch-icons i {
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.watch-icons i:hover {
+  color: #ff2e2e;
+}

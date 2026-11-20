@@ -1,0 +1,46 @@
+.admin-contact-page {
+  padding: 40px;
+  background: #f8fafc;
+  min-height: 100vh;
+}
+
+.admin-contact-page h2 {
+  margin-bottom: 25px;
+  font-weight: 600;
+}
+
+.admin-contact-page table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+
+.admin-contact-page thead {
+  background: #1e293b;
+  color: white;
+}
+
+.admin-contact-page th,
+.admin-contact-page td {
+  padding: 14px;
+  text-align: left;
+  font-size: 14px;
+}
+
+.admin-contact-page tbody tr {
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.admin-contact-page tbody tr:hover {
+  background: #f1f5f9;
+}
+
+.message-cell {
+  max-width: 250px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

@@ -1,0 +1,31 @@
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.stat-card {
+  background: white;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+  position: relative;
+  overflow: hidden;
+}
+
+.stat-card h4 {
+  font-size: 14px;
+  color: #888;
+}
+
+.stat-card h2 {
+  margin-top: 10px;
+  position: relative;
+  z-index: 999;
+}
+
+.revenue {
+  background: linear-gradient(45deg, #ff3b3b, #ff6b6b);
+  color: white;
+}
+

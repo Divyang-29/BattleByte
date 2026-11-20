@@ -1,0 +1,48 @@
+.contact-wrapper {
+  padding: 100px 0;
+  background: linear-gradient(to right, #2a0000, #050008);
+  color: #ffffff;
+}
+
+.contact-heading {
+  font-size: 42px;
+  font-weight: 800;
+}
+
+/* Form */
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 15px;
+  background: #000;
+  border: 1px solid #ff2e2e;
+  color: #fff;
+  outline: none;
+  transition: 0.3s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #ff0000;
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.4);
+}
+
+/* Button */
+.contact-btn {
+  background: #000;
+  color: #fff;
+  border: 2px solid #ff2e2e;
+  padding: 12px 40px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.contact-btn:hover {
+  background: #ff2e2e;
+  color: #000;
+}
+
+/* Status */
+.contact-status {
+  font-weight: 600;
+}

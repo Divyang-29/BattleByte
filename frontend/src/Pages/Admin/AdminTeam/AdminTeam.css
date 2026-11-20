@@ -1,0 +1,166 @@
+/* Page */
+
+.admin-team-container {
+  padding: 60px 20px;
+  background: #f4f6f9;
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Title */
+
+.admin-team-container h1 {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 35px;
+  color: #1f2937;
+}
+
+/* Form */
+
+.team-form {
+  background: white;
+  padding: 35px;
+  border-radius: 14px;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: 0 12px 35px rgba(0,0,0,0.06);
+  margin-bottom: 50px;
+}
+
+/* Input */
+
+.team-form input[type="text"] {
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 18px;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  background: #fafafa;
+  font-size: 14px;
+  transition: 0.2s;
+}
+
+.team-form input:focus {
+  outline: none;
+  border-color: #6366f1;
+  background: white;
+  box-shadow: 0 0 0 3px rgba(99,102,241,0.15);
+}
+
+/* Upload box */
+
+.file-label {
+  display: block;
+  border: 2px dashed #d1d5db;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  cursor: pointer;
+  background: #fafafa;
+  transition: 0.2s;
+  margin-bottom: 15px;
+  font-weight: 500;
+}
+
+.file-label:hover {
+  border-color: #6366f1;
+  background: #f8f9ff;
+}
+
+.file-label input {
+  display: none;
+}
+
+/* Preview */
+
+.preview-box {
+  margin-bottom: 15px;
+}
+
+.preview-box img {
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+}
+
+/* Button */
+
+.team-form button {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(135deg,#6366f1,#4f46e5);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.team-form button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(99,102,241,0.25);
+}
+
+/* Grid */
+
+.team-grid {
+  width: 100%;
+  max-width: 1100px;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fill,minmax(220px,1fr));
+  gap: 25px;
+}
+
+/* Card */
+
+.team-card {
+  background: white;
+  padding: 20px;
+  border-radius: 14px;
+  text-align: center;
+
+  border: 1px solid #e5e7eb;
+  transition: 0.25s;
+}
+
+.team-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.08);
+}
+
+/* Image */
+
+.team-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 12px;
+}
+
+/* Name */
+
+.team-card h3 {
+  font-size: 16px;
+  color: #111827;
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+
+  .team-form {
+    padding: 25px;
+  }
+
+  .admin-team-container {
+    padding: 40px 15px;
+  }
+
+}

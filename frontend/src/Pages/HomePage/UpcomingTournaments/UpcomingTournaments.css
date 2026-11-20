@@ -1,0 +1,88 @@
+.tournament-section {
+  background: linear-gradient(180deg, #1a0000, #000);
+  padding: 80px 0;
+  color: white;
+}
+
+.tournament-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.tournament-header h2 {
+  font-size: 40px;
+  font-weight: 700;
+}
+
+.view-btn {
+  background: transparent;
+  border: 2px solid #ff2e2e;
+  color: white;
+  padding: 8px 25px;
+  transition: 0.3s;
+}
+
+.view-btn:hover {
+  background: #ff2e2e;
+}
+
+/* Table */
+.tournament-table {
+  width: 100%;
+}
+
+.tournament-row {
+  display: grid;
+  grid-template-columns: 2fr 2fr 2fr 1fr 1fr 1fr;
+  align-items: center;
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.header-row {
+  font-weight: 700;
+  color: #ccc;
+  border-bottom: 2px solid #ff2e2e;
+}
+
+/* Team cell */
+.team-cell {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.team-cell img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+
+.team-cell span {
+  font-weight: bold;
+}
+
+/* Watch icons */
+.watch-icons i {
+  margin-right: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.watch-icons i:hover {
+  color: #ff2e2e;
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+  .tournament-row {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .header-row {
+    display: none;
+  }
+}
