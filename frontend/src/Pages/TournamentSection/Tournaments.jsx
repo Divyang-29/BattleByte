@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from "react";
+import { fetchWithCache, API_URL } from "../../config/api";
 import "./Tournaments.css";
 
 export default function Tournaments() {
   const [tournaments, setTournaments] = useState([]);
 
   useEffect(() => {
-    fetch(`${import.meta.env.VITE_API_URL || "https://battlebyte.130-210-12-68.sslip.io"}/api/tournaments`)
-      .then(res => res.json())
-      .then(data => setTournaments(data))
-      .catch(err => console.error("Tournament error:", err));
+    fetchWithCache(`${API_URL}/api/tournaments`)
+      .then((data) => setTournaments(data || []))
+      .catch((err) => console.error("Tournament error:", err));
   }, []);
 
   const formatDate = (date) => {
@@ -27,7 +27,6 @@ export default function Tournaments() {
         <h2 className="tournament-title">Upcoming Tournaments</h2>
 
         <div className="tournament-table">
-
           {/* HEADER */}
           <div className="tournament-header">
             <span>TEAM</span>
@@ -39,19 +38,22 @@ export default function Tournaments() {
           </div>
 
           {/* ROWS */}
-          {tournaments.map(tour => (
+          {tournaments.map((tour) => (
             <div key={tour.id} className="tournament-row">
-
               {/* TEAM */}
               <div className="team-cell">
                 <img
-                  src={`${import.meta.env.VITE_API_URL || "https://battlebyte.130-210-12-68.sslip.io"}/uploads/${tour.team1_image}`}
+                  src={`${API_URL}/uploads/${tour.team1_image}`}
                   alt=""
+                  loading="lazy"
+                  decoding="async"
                 />
                 <span className="vs">VS</span>
                 <img
-                  src={`${import.meta.env.VITE_API_URL || "https://battlebyte.130-210-12-68.sslip.io"}/uploads/${tour.team2_image}`}
+                  src={`${API_URL}/uploads/${tour.team2_image}`}
                   alt=""
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
 
@@ -65,20 +67,21 @@ export default function Tournaments() {
               <div>{tour.platform}</div>
 
               {/* SLOTS */}
-              <div>0/{tour.total_slots}</div>
+              <div>{tour.total_slots}</div>
 
               {/* WATCH */}
-              <div className="watch-icons">
-                <a href={tour.watch_link} target="_blank" rel="noreferrer">
-                  <i className="fab fa-youtube"></i>
+              <div>
+                <a
+                  href={tour.watch_link}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="watch-btn"
+                >
+                  <i className="fa-brands fa-youtube"></i> Watch
                 </a>
-                <i className="fab fa-twitch"></i>
-                <i className="fab fa-vimeo-v"></i>
               </div>
-
             </div>
           ))}
-
         </div>
       </div>
     </section>

@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
+import { fetchWithCache, API_URL } from "../../../config/api";
 import "./ProductsSection.css";
 
 export default function ProductsSection() {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    fetch(`${import.meta.env.VITE_API_URL || "https://battlebyte.130-210-12-68.sslip.io"}/api/products`)
-      .then((res) => res.json())
-      .then((data) => setProducts(data))
+    fetchWithCache(`${API_URL}/api/products`)
+      .then((data) => setProducts(data || []))
       .catch((err) => console.error(err));
   }, []);
 
@@ -24,8 +24,10 @@ export default function ProductsSection() {
             <div className="product-card" key={product.id}>
               <img
                 className="product-img"
-                src={`${import.meta.env.VITE_API_URL || "https://battlebyte.130-210-12-68.sslip.io"}/uploads/${product.primary_image}`}
+                src={`${API_URL}/uploads/${product.primary_image}`}
                 alt={product.title}
+                loading="lazy"
+                decoding="async"
               />
 
               <h5 className="product-title">{product.title}</h5>

@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
+import { fetchWithCache, API_URL } from "../../../config/api";
 import "./LatestNews.css";
 
 export default function LatestNews() {
   const [blogs, setBlogs] = useState([]);
 
   useEffect(() => {
-    fetch(`${import.meta.env.VITE_API_URL || "https://battlebyte.130-210-12-68.sslip.io"}/api/blogs`)
-      .then((res) => res.json())
-      .then((data) => setBlogs(data))
+    fetchWithCache(`${API_URL}/api/blogs`)
+      .then((data) => setBlogs(data || []))
       .catch((err) => console.error(err));
   }, []);
 
@@ -25,8 +25,10 @@ export default function LatestNews() {
               <div className="news-card">
                 <div className="news-image">
                   <img
-                    src={`${import.meta.env.VITE_API_URL || "https://battlebyte.130-210-12-68.sslip.io"}/uploads/${blog.primary_image}`}
+                    src={`${API_URL}/uploads/${blog.primary_image}`}
                     alt="blog"
+                    loading="lazy"
+                    decoding="async"
                   />
                 </div>
 
@@ -41,7 +43,6 @@ export default function LatestNews() {
             </div>
           ))}
         </div>
-
       </div>
     </div>
   );

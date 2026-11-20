@@ -1,20 +1,19 @@
 import { useEffect, useState } from "react";
+import { fetchWithCache, API_URL } from "../../../config/api";
 import "./ActiveTeam.css";
 
 export default function ActiveTeam() {
   const [team, setTeam] = useState([]);
 
   useEffect(() => {
-    fetch(`${import.meta.env.VITE_API_URL || "https://battlebyte.130-210-12-68.sslip.io"}/api/team`)
-      .then((res) => res.json())
-      .then((data) => setTeam(data.data))
+    fetchWithCache(`${API_URL}/api/team`)
+      .then((data) => setTeam((data && data.data) || []))
       .catch((err) => console.error(err));
   }, []);
 
   return (
     <section className="active-team-section">
       <div className="container">
-
         <div className="active-team-header">
           <h2>Active Team Members</h2>
           <button className="active-team-btn">View All</button>
@@ -22,14 +21,14 @@ export default function ActiveTeam() {
 
         {/* Horizontal Scroll */}
         <div className="active-team-scroll">
-
           {team.map((member) => (
             <div className="active-team-card" key={member.id}>
-              
               <div className="active-team-image">
                 <img
-                  src={`${import.meta.env.VITE_API_URL || "https://battlebyte.130-210-12-68.sslip.io"}/uploads/${member.image}`}
+                  src={`${API_URL}/uploads/${member.image}`}
                   alt={member.name}
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
 
@@ -42,12 +41,9 @@ export default function ActiveTeam() {
                   <i className="fab fa-twitch"></i>
                 </div>
               </div>
-
             </div>
           ))}
-
         </div>
-
       </div>
     </section>
   );

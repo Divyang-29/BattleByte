@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
+import { fetchWithCache, API_URL } from "../../../config/api";
 import "./UpcomingTournaments.css";
 
 export default function UpcomingTournaments() {
   const [tournaments, setTournaments] = useState([]);
 
   useEffect(() => {
-    fetch(`${import.meta.env.VITE_API_URL || "https://battlebyte.130-210-12-68.sslip.io"}/api/tournaments`)
-      .then((res) => res.json())
-      .then((data) => setTournaments(data))
+    fetchWithCache(`${API_URL}/api/tournaments`)
+      .then((data) => setTournaments(data || []))
       .catch((err) => console.error(err));
   }, []);
 
@@ -20,7 +20,6 @@ export default function UpcomingTournaments() {
         </div>
 
         <div className="tournament-table">
-
           {/* Header */}
           <div className="tournament-row header-row">
             <div>TEAM</div>
@@ -34,23 +33,30 @@ export default function UpcomingTournaments() {
           {/* Rows */}
           {tournaments.map((item) => (
             <div className="tournament-row" key={item.id}>
-              
               {/* Teams */}
               <div className="team-cell">
                 <img
-                  src={`${import.meta.env.VITE_API_URL || "https://battlebyte.130-210-12-68.sslip.io"}/uploads/${item.team1_image}`}
+                  src={`${API_URL}/uploads/${item.team1_image}`}
                   alt=""
+                  loading="lazy"
+                  decoding="async"
                 />
                 <span>VS</span>
                 <img
-                  src={`${import.meta.env.VITE_API_URL || "https://battlebyte.130-210-12-68.sslip.io"}/uploads/${item.team2_image}`}
+                  src={`${API_URL}/uploads/${item.team2_image}`}
                   alt=""
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
 
               {/* Date */}
               <div>
-                {new Date(item.match_date).toLocaleString()}
+                {new Date(item.match_date).toLocaleDateString()} <br />
+                {new Date(item.match_date).toLocaleTimeString([], {
+                  hour: "2-digit",
+                  minute: "2-digit",
+                })}
               </div>
 
               {/* Title */}
@@ -60,19 +66,21 @@ export default function UpcomingTournaments() {
               <div>{item.platform}</div>
 
               {/* Slots */}
-              <div>0/{item.total_slots}</div>
+              <div>{item.total_slots}</div>
 
               {/* Watch */}
-              <div className="watch-icons">
-                <a href={item.watch_link} target="_blank" rel="noreferrer">
-                  <i className="fab fa-youtube"></i>
+              <div>
+                <a
+                  href={item.watch_link}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="watch-link"
+                >
+                  <i className="fa-brands fa-youtube"></i> Watch
                 </a>
-                <i className="fab fa-twitch"></i>
               </div>
-
             </div>
           ))}
-
         </div>
       </div>
     </section>

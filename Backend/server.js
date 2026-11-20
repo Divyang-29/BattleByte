@@ -1,5 +1,6 @@
 const express = require("express");
 const cors = require("cors");
+const compression = require("compression");
 const dotenv = require("dotenv");
 const pool = require("./config/db");
 
@@ -7,10 +8,17 @@ dotenv.config();
 
 const app = express();
 
+app.use(compression());
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use("/uploads", express.static("src/uploads"));
+app.use(
+  "/uploads",
+  express.static("src/uploads", {
+    maxAge: "30d",
+    immutable: true,
+  })
+);
 
 const authRoutes = require("./routes/userRoutes");
 const teamRoutes = require("./routes/teamRoutes");
