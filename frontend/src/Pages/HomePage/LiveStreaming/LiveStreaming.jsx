@@ -37,7 +37,7 @@ export default function LiveStreaming() {
               />
 
               <div className="play-btn">
-                <i className="fas fa-play"></i>
+                <i className="fa-solid fa-play" style={{ marginLeft: "4px" }}></i>
               </div>
             </div>
           </div>
